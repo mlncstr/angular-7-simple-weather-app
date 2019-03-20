@@ -1,0 +1,211 @@
+$temp: var(--temp);
+
+.city {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: hsl($temp, 80%, 40%);
+  color: white;
+  -webkit-transition: all .15s ease-in-out;
+  -moz-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  * {
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-size: cover;
+    opacity: .3;
+    &.Smoke {
+      background-image: url('https://images.unsplash.com/photo-1475778057357-d35f37fa89dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    }
+    &.Clouds {
+      background-image: url('https://images.unsplash.com/photo-1511680321409-d92a85fc4f66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');
+    }
+    &.Rain {
+      background-image: url('https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');
+    }
+    &.Clear {
+      background-image: url('https://images.unsplash.com/photo-1523733257207-0b1c3aafa441?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
+    }
+  }
+  &.expanded {
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    .primary {
+      height: auto;
+      padding: 5% 0;
+    }
+    .secondary {
+      display: block;
+    }
+  }
+}
+
+.city-1 {
+  top: 0;
+  left: 0;
+}
+
+.city-2 {
+  top: 0;
+  right: 0;
+}
+
+.city-3 {
+  bottom: 0;
+  left: 0;
+}
+
+.city-4 {
+  bottom: 0;
+  right: 0;
+}
+
+.primary {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: hsl($temp, 80%, 50%);
+  .stats {
+    top: calc(50% - 75px);
+    z-index: 20;
+    h5 {
+      font-weight: 300;
+      text-transform: uppercase;
+      z-index: 5;
+      font-size: 14px;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 100px;
+      line-height: 100px;
+      z-index: 5;
+      right: -10px;
+      position: relative;
+    }
+
+    h3 {
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      z-index: 5;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      top: calc(50% - 50px);
+      h5 {
+        font-size: 13px;
+      }
+      h1 {
+        font-size: 64px;
+        line-height: 64px;
+        right: -5px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.secondary {
+  display: none;
+  width: 100%;
+  padding-top: 3%;
+  z-index: 30;
+  .row {
+    display: flex;
+    justify-content: center;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 10px;
+    & > div {
+      flex-basis: 50%;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      .name {
+        font-weight: 300;
+        letter-spacing: 2px;
+        display: inline-block;
+        width: 75px;
+        @media (max-width: 768px) {
+          font-size: 13px;
+        }
+      }
+      .num {
+        font-size: 24px;
+        display: flex;
+        flex-basis: 100%;
+        justify-content: flex-end;
+        span {
+          font-size: 14px;
+          position: relative;
+          top: 5px;
+          left: 3px;
+        }
+      }
+    }
+  }
+  .details {
+    height: 0;
+    overflow: hidden;
+    &.open {
+      min-height: 700px;
+    }
+  }
+  .status {
+    margin-top: 3%;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: hsl($temp, 80%, 50%);
+  }
+  .forecast {
+    margin-top: 3%;
+    padding-top: 10px;
+    border-top: 1px solid white;
+    .day {
+      display: flex;
+      flex-direction: column;
+      .dayName {
+        @media (max-width: 768px) {
+          font-size: 13px;
+        }
+      }
+      i {
+        font-size: 24px;
+        padding: 5px 0;
+      }
+    }
+  }
+}
+
+.map {
+  margin-top: 3%;
+}

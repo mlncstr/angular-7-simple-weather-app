@@ -1,0 +1,65 @@
+<div class="city city-{{index}}" [ngClass]="{'expanded': expanded}" (click)="expand()">
+  <div class="primary">
+    <div class="stats">
+      <h5>{{city.name}}</h5>
+      <h1>{{convert(city.main.temp)}}&deg;</h1>
+      <h3>{{changeDesc(city.weather[0].main)}}</h3>
+    </div>
+  </div>
+  <div class="secondary">
+    <div class="row">
+      <div>
+        <span class="name">HIGH</span>
+        <span class="num">{{convert(city.main.temp_max)}}&deg;</span>
+      </div>
+      <div>
+        <span class="name">WIND</span>
+        <span class="num">{{city.wind.speed}} <span>{{windDirection(city.wind.deg)}}</span></span>
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <span class="name">LOW</span>
+        <span class="num">{{convert(city.main.temp_min)}}&deg;</span>
+      </div>
+      <div>
+        <span class="name">HUMID</span>
+        <span class="num">{{city.main.humidity}} <span>%</span></span>
+      </div>
+    </div>
+    <div class="details open">
+      <div class="row">
+        <div>
+          <span class="name">PRESSURE</span>
+          <span class="num" *ngIf="city.main.pressure">{{round(city.main.pressure)}}</span>
+        </div>
+        <div>
+          <span class="name">VIS</span>
+          <span class="num">{{city.visibility}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <span class="name">SUNRISE</span>
+          <span class="num">{{getTime(city.sys.sunrise)}} <span>AM</span></span>
+        </div>
+        <div>
+          <span class="name">SUNSET</span>
+          <span class="num">{{getTime(city.sys.sunset)}} <span>PM</span></span>
+        </div>
+      </div>
+      <div class="row forecast">
+        <div *ngFor="let day of fiveDay" class="day">
+          <div class="dayName">{{convertDay(day)}}</div>
+          <div>
+            <i class="fas {{getClass(day.weather[0].main)}}"></i>
+          </div>
+          <div>{{convert(day.main.temp_max)}}</div>
+        </div>
+      </div>
+      <div id="darkSky-{{index}}" class="map"></div>
+    </div>
+  </div>
+
+  <div class="background {{city.weather[0].main}}"></div>
+</div>

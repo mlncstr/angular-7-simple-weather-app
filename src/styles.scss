@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Kanit:300,400,800');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+div {
+  position: relative;
+}
