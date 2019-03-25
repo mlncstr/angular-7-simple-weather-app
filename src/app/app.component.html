@@ -3,4 +3,15 @@
   <app-city [city]="city2" [index]=2></app-city>
   <app-city [city]="city3" [index]=3></app-city>
   <app-city [city]="city4" [index]=4></app-city>
+  <i class="fas fa-cog" (click)="changeCities($event)"></i>
+</div>
+
+<div *ngIf="modal" class="modal">
+  <div class="modalContainer">
+    <input type="text" [(ngModel)]="city1name" />
+    <input type="text" [(ngModel)]="city2name" />
+    <input type="text" [(ngModel)]="city3name" />
+    <input type="text" [(ngModel)]="city4name" />
+    <button (click)="closeModal()">Save</button>
+  </div>
 </div>

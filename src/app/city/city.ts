@@ -111,7 +111,8 @@ export class CityComponent implements OnInit {
   }
 
   convertDay(day) {
-    const d = new Date(day.dt_txt);
+    const newDay = day.dt_txt.replace(' ', 'T');
+    const d = new Date(newDay);
     const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     return days[d.getDay()];
   }

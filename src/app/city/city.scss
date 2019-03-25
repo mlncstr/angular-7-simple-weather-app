@@ -33,7 +33,7 @@ $temp: var(--temp);
     height: 100%;
     z-index: 5;
     background-size: cover;
-    opacity: .3;
+    opacity: .4;
     &.Smoke {
       background-image: url('https://images.unsplash.com/photo-1475778057357-d35f37fa89dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
     }
@@ -45,6 +45,9 @@ $temp: var(--temp);
     }
     &.Clear {
       background-image: url('https://images.unsplash.com/photo-1523733257207-0b1c3aafa441?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
+    }
+    &.Mist {
+      background-image: url('https://images.unsplash.com/photo-1546340270-9908deb7b9a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1471&q=80');
     }
   }
   &.expanded {
