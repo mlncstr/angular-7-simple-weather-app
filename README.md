@@ -2,13 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 
+## SETUP
+Run `npm i` and then get an API key and change your cities with directions below.
+
+## API Key
+Get your API key from OpenWeather (https://openweathermap.org/api) and put it on line 11 of app.component.ts
+
+## Changing Cities
+On the main app component change any of the 4 API calls city query.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
